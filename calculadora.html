@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <form onsubmit="calc()">
+        <label for="n1">Primeiro numero</label>
+        <input type="number" id="n1">
+
+
+        <label for="n2">Primeiro numero</label>
+        <input type="number" id="n2">
+
+        <br></br>
+
+        <label for="operacao">Operacao</label>
+        <select id="operacao">
+            <option value="">Selecione uma opcao</option>
+            <option value="+">Somar</option>
+            <option value="-">Subtrair</option>
+            <option value="*">Multiplicar</option>
+            <option value="/">Dividir</option>
+        </select>
+
+        <br></br>
+
+        <button>Calcular</button>
+    </form>
+
+
+    <script>
+
+        function calc() {
+            event.preventDefault();
+            
+            let n1 = parseInt(document.getElementById('n1').value);
+            let n2 = parseInt(document.getElementById('n2').value);
+            let resultado;
+            let op = document.getElementById('operacao').value;
+
+            if (op == '+') {
+                resultado = somar(n1, n2)
+            }
+            else if (op == '-') { resultado = subtrair(n1, n2) }
+            else if (op == '*') { resultado = multiplicar(n1, n2) }
+            else if (op == '/') { resultado = dividir(n1, n2) }
+            else{alert('SELECIONE UMA OPCAO VALIDA!!!!!')}
+
+
+
+
+            alert(`O resultado e de ${resultado}`)
+
+        }
+
+
+        function subtrair(n1, n2) {
+
+
+            return n1 - n2;
+
+
+        }
+
+        function somar(n1, n2) {
+
+
+            return n1 + n2;
+
+
+        }
+        function multiplicar(n1, n2) {
+
+
+            return n1 * n2;
+
+
+        }
+        function dividir(n1, n2) {
+
+
+            return n1 / n2;
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
